@@ -1,0 +1,42 @@
+
+<html lang="en">
+<head>
+  <title>List of Employees</title>  
+</head>
+<body>
+
+<div class="container">
+  <h2>List of Employees</h2>
+  <!-- <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p> -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="info">ID</th>
+        <th class="info">Full Name</th>
+        <th class="info">Email</th>
+        <th class="info">Date of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td>Default</td>
+        <td>Defaultson</td>
+        <td>def@somemail.com</td>
+        <td>ys</td>
+      </tr>       -->
+      <tr *ngFor ="let employee of employeeList">
+        <td>{{employee.id}}</td>
+        <td>{{employee.fullName}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.dob}}</td>
+        <!-- <td><button class="btn btn-primary" type="submit" (click)="showEmployee(employee.id)" >Details</button></td> -->
+        <td><button class="btn btn-success" type="submit" (click)="goToUpdate(employee.id)">Update</button></td>
+        <td><button class="btn btn-danger" type="submit" (click)="deleteEmployee(employee.id)">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
